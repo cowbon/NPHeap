@@ -1,10 +1,12 @@
-all: benchmark validate
+CFLAGS := -g -O0 -I/usr/local/include
+LDFLAGS := -lnpheap
+SOURCE := benchmark.c validate.c benchmark_one_obj.c
+PROGS := ${SOURCE:.c=}
+all: $(PROGS)
 
-benchmark: benchmark.c 
-	$(CC) -g -O0 benchmark.c -o benchmark -I/usr/local/include -lnpheap
-	
-validate: validate.c 
-	$(CC) -g -O0 validate.c -o validate -lnpheap
+$(PROGS): %:%.c
+	$(CC) $< -o $@ $(CFLAGS) $(LDFLAGS)
+
 	
 clean:
-	rm -f benchmark validate 
+	rm -f $(PROGS)
