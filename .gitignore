@@ -1,0 +1,5 @@
+*.o
+*.so
+*.log
+trace
+sorted_trace

@@ -26,7 +26,9 @@ install: modules_install
 
 .PHONY: install
 
-
+how-includes:
+	$(foreach include, $(LINUXINCLUDE), echo $(include);)
+	$(foreach include, $(USERINCLUDE), echo $(include);)
 .PHONY:
 
 

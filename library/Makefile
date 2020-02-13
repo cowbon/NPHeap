@@ -13,7 +13,7 @@ install: libnpheap.so.1.0
 
 
 clean:
-	rm -f *.so *.o
+	rm -f *.so *.o *.so.*
 
 
 .PHONY: all clean
